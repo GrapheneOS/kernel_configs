@@ -70,25 +70,11 @@
 		</config>
 	</conditions>
 	<config>
-		<key>CONFIG_RETPOLINE</key>
+		<key>CONFIG_PAGE_TABLE_ISOLATION</key>
 		<value type="bool">y</value>
 	</config>
-</group>
-
-<!-- x86 SMP-specific requirements -->
-<group>
-	<conditions>
-		<config>
-			<key>CONFIG_X86</key>
-			<value type="bool">y</value>
-		</config>
-		<config>
-			<key>CONFIG_SMP</key>
-			<value type="bool">y</value>
-		</config>
-	</conditions>
 	<config>
-		<key>CONFIG_PAGE_TABLE_ISOLATION</key>
+		<key>CONFIG_RETPOLINE</key>
 		<value type="bool">y</value>
 	</config>
 </group>
