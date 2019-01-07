@@ -76,4 +76,4 @@ if __name__ == '__main__':
 
     fixup(args)
 
-    exit(0)
+    sys.exit(0)
