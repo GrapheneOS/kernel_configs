@@ -78,11 +78,13 @@ defconfig to satisfy any applicable requirements.
 
 ## Are the config requirements tested?
 
-Starting with Android O the base kernel configs are not just advisory. They
-are tested as part of VTS in the
-[VtsKernelConfig](https://android.googlesource.com/platform/test/vts-testcase/kernel/+/master/config/VtsKernelConfigTest.py)
-test, and also during device boot when the vendor interface (which includes the
-kernel configuration) and framework compatibility matrix are compared.
+Starting with Android O the base kernel configs are not just advisory. They are
+tested as part of
+[VTS](https://android.googlesource.com/platform/test/vts-testcase/hal/+/master/treble/framework_vintf/AndroidTest.xml)
+(specifically the SystemVendorTest.KernelCompatibility subtest of
+CtsOnGsiTrebleFrameworkVintfTest), and also during device boot when the vendor
+interface (which includes the kernel configuration) and framework compatibility
+matrix are compared.
 
 ## Ensuring Device Upgradability
 
