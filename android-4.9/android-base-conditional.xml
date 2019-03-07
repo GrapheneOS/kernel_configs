@@ -147,3 +147,17 @@
 	</config>
 </group>
 
+<!-- CONFIG_USB implies CONFIG_USB_RTL8152 -->
+<group>
+	<conditions>
+		<config>
+			<key>CONFIG_USB_RTL8152</key>
+			<value type="bool">n</value>
+		</config>
+	</conditions>
+	<config>
+		<key>CONFIG_USB</key>
+		<value type="bool">n</value>
+	</config>
+</group>
+
