@@ -78,7 +78,7 @@ func (g *KernelConfigRule) DepsMutator(ctx android.BottomUpMutatorContext) {
 }
 
 func (g *KernelConfigRule) GenerateAndroidBuildActions(ctx android.ModuleContext) {
-	g.outputPath = android.PathForModuleOut(ctx, "matrix.xml")
+	g.outputPath = android.PathForModuleOut(ctx, "matrix_" + g.Name() + ".xml")
 	genVersion := android.PathForModuleGen(ctx, "version.txt")
 	genConditionals := android.PathForModuleGen(ctx, "conditional.xml")
 	inputMeta := android.PathForModuleSrc(ctx, proptools.String(g.properties.Meta))
