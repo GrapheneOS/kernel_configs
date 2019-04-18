@@ -67,10 +67,6 @@
 		<key>CONFIG_SWP_EMULATION</key>
 		<value type="bool">y</value>
 	</config>
-	<config>
-		<key>CONFIG_BPF_JIT_ALWAYS_ON</key>
-		<value type="bool">y</value>
-	</config>
 </group>
 
 <!-- x86 base requirements -->
@@ -91,10 +87,6 @@
 	</config>
 	<config>
 		<key>CONFIG_RETPOLINE</key>
-		<value type="bool">y</value>
-	</config>
-	<config>
-		<key>CONFIG_BPF_JIT_ALWAYS_ON</key>
 		<value type="bool">y</value>
 	</config>
 </group>
