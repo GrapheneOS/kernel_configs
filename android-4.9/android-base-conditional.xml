@@ -55,10 +55,6 @@
 		<key>CONFIG_SWP_EMULATION</key>
 		<value type="bool">y</value>
 	</config>
-	<config>
-		<key>CONFIG_UNMAP_KERNEL_AT_EL0</key>
-		<value type="bool">y</value>
-	</config>
 </group>
 
 <!-- x86 base requirements -->
