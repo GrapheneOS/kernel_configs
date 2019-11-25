@@ -36,6 +36,14 @@
 		</config>
 	</conditions>
 	<config>
+		<key>CONFIG_ARM64_PAN</key>
+		<value type="bool">y</value>
+	</config>
+	<config>
+		<key>CONFIG_ARM64_SW_TTBR0_PAN</key>
+		<value type="bool">y</value>
+	</config>
+	<config>
 		<key>CONFIG_ARMV8_DEPRECATED</key>
 		<value type="bool">y</value>
 	</config>
@@ -53,40 +61,6 @@
 	</config>
 	<config>
 		<key>CONFIG_SWP_EMULATION</key>
-		<value type="bool">y</value>
-	</config>
-</group>
-
-<!-- For ARM64, CONFIG_ARM64_SW_TTBR0_PAN || CONFIG_ARM64_PAN -->
-<group>
-	<conditions>
-		<config>
-			<key>CONFIG_ARM64</key>
-			<value type="bool">y</value>
-		</config>
-		<config>
-			<key>CONFIG_ARM64_SW_TTBR0_PAN</key>
-			<value type="bool">n</value>
-		</config>
-	</conditions>
-	<config>
-		<key>CONFIG_ARM64_PAN</key>
-		<value type="bool">y</value>
-	</config>
-</group>
-<group>
-	<conditions>
-		<config>
-			<key>CONFIG_ARM64</key>
-			<value type="bool">y</value>
-		</config>
-		<config>
-			<key>CONFIG_ARM64_PAN</key>
-			<value type="bool">n</value>
-		</config>
-	</conditions>
-	<config>
-		<key>CONFIG_ARM64_SW_TTBR0_PAN</key>
 		<value type="bool">y</value>
 	</config>
 </group>
