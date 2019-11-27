@@ -32,6 +32,10 @@
 		</config>
 	</conditions>
 	<config>
+		<key>CONFIG_ARM64_PAN</key>
+		<value type="bool">y</value>
+	</config>
+	<config>
 		<key>CONFIG_ARM64_SW_TTBR0_PAN</key>
 		<value type="bool">y</value>
 	</config>
