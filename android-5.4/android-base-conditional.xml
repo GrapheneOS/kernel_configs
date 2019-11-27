@@ -1,4 +1,4 @@
-<kernel minlts="4.9.0" />
+<kernel minlts="5.4.0" />
 
 <!-- KEEP ALPHABETICALLY SORTED -->
 <!-- ARM base requirements -->
@@ -16,6 +16,10 @@
 	<config>
 		<key>CONFIG_CPU_SW_DOMAIN_PAN</key>
 		<value type="bool">y</value>
+	</config>
+	<config>
+		<key>CONFIG_DEVKMEM</key>
+		<value type="bool">n</value>
 	</config>
 	<config>
 		<key>CONFIG_OABI_COMPAT</key>
@@ -70,6 +74,10 @@
 		</config>
 	</conditions>
 	<config>
+		<key>CONFIG_DEVKMEM</key>
+		<value type="bool">n</value>
+	</config>
+	<config>
 		<key>CONFIG_PAGE_TABLE_ISOLATION</key>
 		<value type="bool">y</value>
 	</config>
@@ -101,48 +109,6 @@
 	</conditions>
 	<config>
 		<key>CONFIG_ACPI</key>
-		<value type="bool">y</value>
-	</config>
-</group>
-
-<!-- CONFIG_ANDROID_LOW_MEMORY_KILLER || (CONFIG_MEMCG && CONFIG_MEMCG_SWAP) -->
-<group>
-	<conditions>
-		<config>
-			<key>CONFIG_ANDROID_LOW_MEMORY_KILLER</key>
-			<value type="bool">n</value>
-		</config>
-	</conditions>
-	<config>
-		<key>CONFIG_MEMCG</key>
-		<value type="bool">y</value>
-	</config>
-	<config>
-		<key>CONFIG_MEMCG_SWAP</key>
-		<value type="bool">y</value>
-	</config>
-</group>
-<group>
-	<conditions>
-		<config>
-			<key>CONFIG_MEMCG</key>
-			<value type="bool">n</value>
-		</config>
-	</conditions>
-	<config>
-		<key>CONFIG_ANDROID_LOW_MEMORY_KILLER</key>
-		<value type="bool">y</value>
-	</config>
-</group>
-<group>
-	<conditions>
-		<config>
-			<key>CONFIG_MEMCG_SWAP</key>
-			<value type="bool">n</value>
-		</config>
-	</conditions>
-	<config>
-		<key>CONFIG_ANDROID_LOW_MEMORY_KILLER</key>
 		<value type="bool">y</value>
 	</config>
 </group>
