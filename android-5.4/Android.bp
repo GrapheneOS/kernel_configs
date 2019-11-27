@@ -13,7 +13,7 @@
 // limitations under the License.
 
 kernel_config {
-    name: "kernel_config_current_4.9",
+    name: "kernel_config_current_5.4",
     srcs: [
         "android-base.config",
     ],
