@@ -40,12 +40,18 @@ var (
 )
 
 type KernelConfigProperties struct {
-	// list of source files that should be named "android-base.config" for common requirements
-	// and "android-base-foo.config" for requirements on condition CONFIG_FOO=y.
+	// List of source files. There should be:
+	// 1. Exactly One "android-base.config" as common requirements.
+	// 2. Zero or more file with names that does NOT start with "android-base-" as extra common requirements.
+	// 3. Zero or more "android-base-foo.config" for requirements on condition CONFIG_FOO=y.
+	//    (deprecated; use Meta to express conditional requirements instead.)
 	Srcs []string
 
 	// metadata XML file that contains minlts and complex conditional requirements.
 	Meta *string
+
+	// list of source files to replace Srcs on debuggable builds. See docs for Srcs.
+	Debuggable_srcs []string
 }
 
 type KernelConfigRule struct {
@@ -72,8 +78,16 @@ func (g *KernelConfigRule) OutputPath() android.Path {
 	return g.outputPath
 }
 
+func (g *KernelConfigRule) realSrcs(ctx android.BaseModuleContext) []string {
+	if ctx.Config().Debuggable() {
+		return g.properties.Debuggable_srcs
+	} else {
+		return g.properties.Srcs
+	}
+}
+
 func (g *KernelConfigRule) DepsMutator(ctx android.BottomUpMutatorContext) {
-	android.ExtractSourcesDeps(ctx, g.properties.Srcs)
+	android.ExtractSourcesDeps(ctx, g.realSrcs(ctx))
 	android.ExtractSourceDeps(ctx, g.properties.Meta)
 }
 
@@ -99,7 +113,7 @@ func (g *KernelConfigRule) GenerateAndroidBuildActions(ctx android.ModuleContext
 	})
 
 	var kernelArg string
-	inputConfigs := android.PathsForModuleSrc(ctx, g.properties.Srcs)
+	inputConfigs := android.PathsForModuleSrc(ctx, g.realSrcs(ctx))
 	implicitInputs := append(inputConfigs, genVersion)
 	if len(inputConfigs) > 0 {
 		kernelArg = "--kernel=$$(cat " + genVersion.String() + "):" +
