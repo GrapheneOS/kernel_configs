@@ -46,6 +46,10 @@ In releases after Android P the architecture-specific base config fragments are
 removed, and conditional kernel config requirements are stored in
 `android-base-conditional.xml`.
 
+In Android R or above, additional config fragments are added conditionally
+on build variants. In particular, `non_debuggable.config` contains additional
+requirements for user builds.
+
 Kernel configs vary by kernel version, so there are sets of kernel configs for
 each version of the kernel that Android supports.
 
