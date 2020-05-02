@@ -60,6 +60,10 @@
 		<value type="bool">y</value>
 	</config>
 	<config>
+		<key>CONFIG_SHADOW_CALL_STACK</key>
+		<value type="bool">y</value>
+	</config>
+	<config>
 		<key>CONFIG_SWP_EMULATION</key>
 		<value type="bool">y</value>
 	</config>
