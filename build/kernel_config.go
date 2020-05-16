@@ -79,7 +79,7 @@ func (g *KernelConfigRule) OutputPath() android.Path {
 }
 
 func (g *KernelConfigRule) realSrcs(ctx android.BaseModuleContext) []string {
-	if ctx.Config().Debuggable() {
+	if ctx.Config().Debuggable() && len(g.properties.Debuggable_srcs) > 0 {
 		return g.properties.Debuggable_srcs
 	} else {
 		return g.properties.Srcs
