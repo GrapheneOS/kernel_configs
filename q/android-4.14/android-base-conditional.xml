@@ -139,6 +139,32 @@
 	</config>
 </group>
 
+<!-- CONFIG_MEMCG || CONFIG_PSI -->
+<group>
+	<conditions>
+		<config>
+			<key>CONFIG_MEMCG</key>
+			<value type="bool">n</value>
+		</config>
+	</conditions>
+	<config>
+		<key>CONFIG_PSI</key>
+		<value type="bool">y</value>
+	</config>
+</group>
+<group>
+	<conditions>
+		<config>
+			<key>CONFIG_PSI</key>
+			<value type="bool">n</value>
+		</config>
+	</conditions>
+	<config>
+		<key>CONFIG_MEMCG</key>
+		<value type="bool">y</value>
+	</config>
+</group>
+
 <!-- CONFIG_USB implies CONFIG_USB_RTL8152 -->
 <group>
 	<conditions>
