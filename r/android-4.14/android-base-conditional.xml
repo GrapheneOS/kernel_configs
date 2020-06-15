@@ -135,3 +135,30 @@
 	</config>
 </group>
 
+<!-- EXT4 requirements -->
+<group>
+	<conditions>
+		<config>
+			<key>CONFIG_EXT4_FS</key>
+			<value type="bool">y</value>
+		</config>
+	</conditions>
+	<config>
+		<key>CONFIG_EXT4_FS_POSIX_ACL</key>
+		<value type="bool">y</value>
+	</config>
+</group>
+
+<!-- F2FS requirements -->
+<group>
+	<conditions>
+		<config>
+			<key>CONFIG_F2FS_FS</key>
+			<value type="bool">y</value>
+		</config>
+	</conditions>
+	<config>
+		<key>CONFIG_F2FS_FS_POSIX_ACL</key>
+		<value type="bool">y</value>
+	</config>
+</group>
